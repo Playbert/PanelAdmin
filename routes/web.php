@@ -17,4 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+
+	// Rutas de acceso para los que inician sesion
+	Route::get('/home', 'HomeController@index')->name('home');
+
+	Route::group(['middleware' => 'modelador'], function () { 
+
+		//Rutas de acceso para el rol modelador
+		Route::resource('servicioss', 'ServicioController');
+	});
+
+});
