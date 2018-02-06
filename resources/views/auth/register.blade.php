@@ -37,42 +37,6 @@
                                 @endif
                             </div>
                         </div>
-                         <div class="form-group{{ $errors->has('tipoUsuario') ? ' has-error' : '' }}">
-                            <label for="tipoUsuario" class="col-md-4 control-label">Tipo de Usuario</label>
-                            <div class="col-md-6">
-                                @if(Auth::user()->tipoUsuario == 'admin')
-                                <select name="tipoUsuario" id="tipoUsuario" class="form-control">
-                                    <option value="">Tipo de Usuario</option>
-                                    <option value="admin">Administrador</option>
-                                    <option value="revendedor">Revendedor</option>
-                                    <option value="empresa">Administrador Empresa</option>
-                                    <option value="empleado">Empleado</option>
-                                </select>
-                                @endif
-                                @if(Auth::user()->tipoUsuario == 'revendedor')
-                                <select name="tipoUsuario" id="tipoUsuario" class="form-control">
-                                    <option value="">Tipo de Usuario</option>
-                                    <option value="empresa">Administrador Empresa</option>
-                                    <option value="empleado">Empleado</option>
-                                </select>
-                                @endif
-                                @if(Auth::user()->tipoUsuario == 'empresa')
-                                <select name="tipoUsuario" id="tipoUsuario" class="form-control">
-                                    <option value="">Tipo de Usuario</option>
-                                    <option value="empresa">Administrador Empresa</option>
-                                    <option value="empleado">Empleado</option>
-                                </select>
-                                @endif
-                                @if(Auth::user()->tipoUsuario == 'empleado')
-                                <input type="hidden" name="tipoUsuario" value="empleado">
-                                @endif
-                                @if ($errors->has('tipoUsuario'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('tipoUsuario') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
